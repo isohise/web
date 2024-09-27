@@ -11,6 +11,10 @@ header, footer {
     padding: 15px;
     text-align: center;
 }
+header nav {
+    display: flex;
+    align-items: center;
+}
 nav a {
     color: white;
     margin: 0 15px;
@@ -97,7 +101,8 @@ header nav a.active {
 
 
 @media (min-width: 800px) {
-    nav a {
+    header nav {
+        justify-content: space-between;
         font-size: 22px;
     }
     img {
@@ -109,9 +114,8 @@ header nav a.active {
 }
 
 @media (min-width: 600px) and (max-width: 799px) {
-    nav a {
-        flex-direction: column;
-        align-items: center;
+    header nav {
+        justify-content: space-between;
         font-size: 20px;
     }
     img {
@@ -120,10 +124,13 @@ header nav a.active {
     table, th, td {
         font-size: 14px;
     }
+  
 }
 
 @media (min-width: 400px) and (max-width: 599px) {
-    nav a {
+    header nav {
+        flex-direction: column;
+        gap: 10px;
         font-size: 20px;
     }
     img {

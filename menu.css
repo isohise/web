@@ -47,19 +47,7 @@
     background-color: rgb(195, 156, 221);
 }
 
-@media (min-width: 800px) {
-    nav a {
-        font-size: 22px;
-    }
-}
-
 @media (min-width: 600px) and (max-width: 799px) {
-    nav a {
-        font-size: 22px;
-    }
-    header nav {
-        justify-content: space-between;
-    }
     .meals-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -73,14 +61,6 @@
 
 
 @media (min-width: 400px) and (max-width: 599px) {
-    header nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    header nav a {
-        font-size: 22px;
-    }
     .meals-grid {
         grid-template-columns: 1fr;
     }
