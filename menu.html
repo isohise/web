@@ -6,6 +6,9 @@
     <title>Собрать ланч</title>
     <link rel="stylesheet" href="styles_index.css">
     <link rel="stylesheet" href="menu.css">
+
+    <script src="meals.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -23,81 +26,18 @@
         <section>
             <h2>Супы</h2>
             <div class="meals-grid">
-                <div class="meal-item">
-                    <img src="soup1.jpg" alt="Суп 1">
-                    <p class="meal-name">Том Ям с креветкой</p>
-                    <p class="meal-price">Цена: 365₽</p>
-                    <p class="meal-weight">Объем: 450мл</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="soup2.jpg" alt="Суп 2">
-                    <p class="meal-name">Норвежский суп</p>
-                    <p class="meal-price">Цена: 270₽</p>
-                    <p class="meal-weight">Объем: 350мл</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="soup3.jpg" alt="Суп 3">
-                    <p class="meal-name">Филиппинская уха</p>
-                    <p class="meal-price">Цена: 370₽</p>
-                    <p class="meal-weight">Объем: 300мл</p>
-                    <button>Добавить</button>
-                </div>
             </div>
         </section>
 
         <section>
             <h2>Главные блюда</h2>
             <div class="meals-grid">
-                <div class="meal-item">
-                    <img src="main1.jpg" alt="Главное блюдо 1">
-                    <p class="meal-name">Лазанья</p>
-                    <p class="meal-price">Цена: 385₽</p>
-                    <p class="meal-weight">Вес: 450г</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="main2.jpg" alt="Главное блюдо 2">
-                    <p class="meal-name">Жареная картошка с грибами</p>
-                    <p class="meal-price">Цена: 150₽</p>
-                    <p class="meal-weight">Вес: 350г</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="main3.jpg" alt="Главное блюдо 3">
-                    <p class="meal-name">Котлеты из курицы с картофельным пюре</p>
-                    <p class="meal-price">Цена: 225₽</p>
-                    <p class="meal-weight">Вес: 400г</p>
-                    <button>Добавить</button>
-                </div>
             </div>
         </section>
 
         <section>
             <h2>Напитки</h2>
             <div class="meals-grid">
-                <div class="meal-item">
-                    <img src="drink1.jpg" alt="Напиток 1">
-                    <p class="meal-name">Чай</p>
-                    <p class="meal-price">Цена: 150₽</p>
-                    <p class="meal-weight">Объем: 300мл</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="drink2.jpg" alt="Напиток 2">
-                    <p class="meal-name">Эспрессо</p>
-                    <p class="meal-price">Цена: 140₽</p>
-                    <p class="meal-weight">Объем: 30мл</p>
-                    <button>Добавить</button>
-                </div>
-                <div class="meal-item">
-                    <img src="drink3.jpg" alt="Напиток 3">
-                    <p class="meal-name">Сок яблочный</p>
-                    <p class="meal-price">Цена: 170₽</p>
-                    <p class="meal-weight">Объем: 350мл</p>
-                    <button>Добавить</button>
-                </div>
             </div>
         </section>  
 
@@ -107,56 +47,30 @@
                 <div class="form-container">
                     <fieldset class="order-section">
                         <legend>Ваш заказ</legend>
-    
-                        <label for="soup">Суп</label>
-                        <select id="soup" name="soup" required>
-                            <option value="" selected>--Выберите суп--</option>
-                            <option value="tom_yum">Том Ям с креветкой</option>
-                            <option value="norwegian_soup">Норвежский суп</option>
-                            <option value="philippine_soup">Филиппинская уха</option>
-                        </select><br><br>
-    
-                        <label for="main_dish">Главное блюдо</label>
-                        <select id="main_dish" name="main_dish" required>
-                            <option value="" selected>--Выберите главное блюдо--</option>
-                            <option value="lasagna">Лазанья</option>
-                            <option value="fried_potato">Жареная картошка с грибами</option>
-                            <option value="chicken_cutlets">Котлеты из курицы с картофельным пюре</option>
-                        </select><br><br>
-    
-                        <label for="drink">Напиток</label>
-                        <select id="drink" name="drink" required>
-                            <option value="" selected>--Выберите напиток--</option>
-                            <option value="tea">Чай</option>
-                            <option value="espresso">Эспрессо</option>
-                            <option value="apple_juice">Сок яблочный</option>
-                        </select><br><br>
+                        <div id="order-summary">
+                            <p>Ничего не выбрано</p>
+                        </div>
+                        <div class="total-cost"></div><br><br>
     
                         <label for="comment">Комментарии к заказу</label><br>
                         <textarea id="comment" name="comment" rows="4" cols="40"></textarea>
                     </fieldset>
-    
+
+                       
                     <fieldset class="customer-section">
                         <legend>Ваши данные</legend>
-    
                         <label for="name">Имя</label>
                         <input type="text" id="name" name="name" required><br><br>
     
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required><br>
+                        <input type="email" id="email" name="email" required><br><br>
 
-                        <label for="subscribe" class="inline-label">
-                            <input type="checkbox" id="subscribe" name="subscribe" checked>
-                            Получать информацию о скидках и акциях
-                        </label><br><br>
-    
                         <label for="phone">Номер телефона</label>
                         <input type="tel" id="phone" name="phone" required><br><br>
-    
+
                         <label for="address">Адрес доставки</label>
-                        <input type="text" id="address" name="address" required><br>
-                        <small>Доставка осуществляется только по Москве</small><br><br>
-    
+                        <input type="text" id="address" name="address" required><br><br>
+
                         <label for="delivery_time">Время доставки:</label><br>
                         <label for="delivery_asap" class="inline-label">
                             <input type="radio" id="delivery_asap" name="delivery_time" value="asap" required>
@@ -167,9 +81,10 @@
                             К указанному времени
                         </label><br><br>
     
-                        <label for="delivery_time_input">Укажите время доставки</label><br>
-                        <input type="time" id="delivery_time_input" name="delivery_time_input" min="07:00" max="23:00" step="300"><br>
-                        <small>Доступное время доставки с 7:00 до 23:00</small><br><br>
+                        <label for="delivery_time_input" id="time_label">Укажите время доставки</label><br>
+                        <input type="time" id="delivery_time_input" name="delivery_time_input" min="07:00" max="23:00"><br>
+                        <small id="delivery_time_hint">Доступное время доставки с 7:00 до 23:00.</small><br><br>
+
 
                         <div class="form-buttons">
                             <button type="reset">Сбросить</button>
@@ -186,5 +101,6 @@
         <a class="feedback-button" href="feedback.html">Обратная связь</a>
     </footer>
 
+    <script src="delivery.js"></script>
 </body>
 </html>
