@@ -68,12 +68,12 @@ legend {
 }
 
 #order-summary h3 {
-margin-top: 0px;
-font-weight: bold;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 #order-summary p {
-  margin: 5px 0;
+  margin: 10px 0;
   font-size: 14px;
 }
 
