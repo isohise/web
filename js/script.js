@@ -56,7 +56,7 @@ function getCategoryTitle(category) {
     case "salad":
       return "Салат";
     case "dessert":
-      return "Дессерт";
+      return "Десерт";
     default:
       return "";
   }
