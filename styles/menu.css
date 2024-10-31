@@ -138,6 +138,10 @@ button[type="submit"]:hover {
   color: white;
 }
 
+.filters button:hover {
+  background-color: rgb(195, 156, 221);
+}
+
 @media (min-width: 600px) and (max-width: 799px) {
   .meals-grid {
     grid-template-columns: repeat(2, 1fr);
