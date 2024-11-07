@@ -107,13 +107,16 @@ document.addEventListener("DOMContentLoaded", function () {
         .id.split("-")[0];
       const kind = this.getAttribute("data-kind");
 
-      this.closest(".filters")
-        .querySelectorAll("button")
-        .forEach((btn) => btn.classList.remove("active"));
-
       this.classList.toggle("active");
 
       if (this.classList.contains("active")) {
+
+        this.closest(".filters")
+          .querySelectorAll("button")
+          .forEach((btn) => {
+            if (btn !== this) btn.classList.remove("active");
+          });
+
         displayMeals(categorySection, kind);
       } else {
         displayMeals(categorySection);
