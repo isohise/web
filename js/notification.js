@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const selectedCategories = Object.keys(order).filter((key) => order[key]);
 
+    const categoriesWithoutDessert = selectedCategories.filter(
+      (category) => category !== "dessert"
+    );
+
     const isValidCombo = combos.some((combo) => {
       return (
-        selectedCategories.length === combo.length &&
-        combo.every((item) => selectedCategories.includes(item))
+        categoriesWithoutDessert.length === combo.length &&
+        combo.every((item) => categoriesWithoutDessert.includes(item))
       );
     });
 
