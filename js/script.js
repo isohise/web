@@ -123,4 +123,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  document.querySelector("form").addEventListener("reset", function () {
+    order = {
+      soup: null,
+      main: null,
+      drink: null,
+      salad: null,
+      dessert: null,
+    };
+
+    updateOrderDisplay();
+  });
 });
