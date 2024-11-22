@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/menu.css" />
     <script src="js/meals.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/notification.js"></script>
   </head>
   <body>
     <header>
@@ -22,6 +23,109 @@
     </header>
 
     <main>
+      <section class="lunch-combo">
+        <h1 class="lunch-combo-title">Доступные для заказа комбо</h1>
+        <div class="combo-grid">
+          <div class="combo-item">
+            <div class="dish">
+              <img src="pictures\soup.png" alt="Суп" class="dish-img" />
+              <p>Суп</p>
+            </div>
+            <div class="dish">
+              <img
+                src="pictures\main.png"
+                alt="Главное блюдо"
+                class="dish-img"
+              />
+              <p>Главное блюдо</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\salad.png" alt="Салат" class="dish-img" />
+              <p>Салат</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\drink.png" alt="Напиток" class="dish-img" />
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <div class="combo-item">
+            <div class="dish">
+              <img src="pictures\soup.png" alt="Суп" class="dish-img" />
+              <p>Суп</p>
+            </div>
+            <div class="dish">
+              <img
+                src="pictures\main.png"
+                alt="Главное блюдо"
+                class="dish-img"
+              />
+              <p>Главное блюдо</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\drink.png" alt="Напиток" class="dish-img" />
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <div class="combo-item">
+            <div class="dish">
+              <img src="pictures\soup.png" alt="Суп" class="dish-img" />
+              <p>Суп</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\salad.png" alt="Салат" class="dish-img" />
+              <p>Салат</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\drink.png" alt="Напиток" class="dish-img" />
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <div class="combo-item">
+            <div class="dish">
+              <img
+                src="pictures\main.png"
+                alt="Главное блюдо"
+                class="dish-img"
+              />
+              <p>Главное блюдо</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\salad.png" alt="Салат" class="dish-img" />
+              <p>Салат</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\drink.png" alt="Напиток" class="dish-img" />
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <div class="combo-item">
+            <div class="dish">
+              <img
+                src="pictures\main.png"
+                alt="Главное блюдо"
+                class="dish-img"
+              />
+              <p>Главное блюдо</p>
+            </div>
+            <div class="dish">
+              <img src="pictures\drink.png" alt="Напиток" class="dish-img" />
+              <p>Напиток</p>
+            </div>
+          </div>
+
+          <div class="combo-item dessert-item">
+            <div class="dish">
+            <img src="pictures\desert.png" alt="Десерт" class="dish-img" />
+            <p>Десерт</p>
+            <p class="dessert-note">(Можно добавить к любому заказу)</p>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2>Супы</h2>
         <div class="filters">
@@ -45,7 +149,7 @@
       <section>
         <h2>Салаты и стартеры</h2>
         <div class="filters">
-          <button data-kind="fish">Рыбные</button>
+          <button class="filters-button" data-kind="fish">Рыбные</button>
           <button data-kind="meat">Мясные</button>
           <button data-kind="veg">Вегетарианские</button>
         </div>
