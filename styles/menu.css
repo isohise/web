@@ -116,7 +116,9 @@ select {
   margin-top: 20px;
   text-align: left;
 }
-
+h2 {
+  padding: 15px;
+}
 button {
   padding: 10px 20px;
   margin-right: 10px;
@@ -224,8 +226,7 @@ button[type="submit"]:hover {
   color: #666;
   text-align: center;
 }
-
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .meals-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -235,9 +236,24 @@ button[type="submit"]:hover {
   h1 {
     text-align: center;
   }
-  section h2 {
+  .dessert-item .dessert-note {
+    white-space: nowrap;
+  }  
+}
+
+@media (min-width: 600px) and (max-width: 799px){
+  .meals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .combo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  h1 {
     text-align: center;
   }
+  .dessert-item .dessert-note {
+    white-space: none;
+  } 
 }
 
 @media (min-width: 400px) and (max-width: 599px) {
@@ -259,4 +275,7 @@ button[type="submit"]:hover {
     width: 100%;
     padding: 10px;
   }
+  .dessert-item .dessert-note {
+    white-space: none;
+  } 
 }

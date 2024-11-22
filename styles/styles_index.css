@@ -38,6 +38,12 @@ h2 {
   color: #333;
 }
 
+h3 {
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 img {
   width: 50%;
   height: auto;
