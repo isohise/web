@@ -1,13 +1,15 @@
+import { order } from "./script.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const orderSummary = document.getElementById("order-summary");
 
   const combos = [
-    ["soup", "main", "salad", "drink"],
-    ["soup", "main", "drink"],
+    ["soup", "main_course", "salad", "drink"],
+    ["soup", "main_course", "drink"],
     ["soup", "salad", "drink"],
-    ["main", "salad", "drink"],
-    ["main", "drink"],
+    ["main_course", "salad", "drink"],
+    ["main_course", "drink"],
   ];
 
   form.addEventListener("submit", function (e) {
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       displayNotification("Выберите напиток");
     } else if (
       selectedCategories.includes("soup") &&
-      !selectedCategories.includes("main") &&
+      !selectedCategories.includes("main_course") &&
       !selectedCategories.includes("salad")
     ) {
       displayNotification("Выберите главное блюдо/салат/стартер");
@@ -40,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
       (selectedCategories.includes("salad") ||
         selectedCategories.includes("dessert")) &&
       !selectedCategories.includes("soup") &&
-      !selectedCategories.includes("main")
+      !selectedCategories.includes("main_course")
     ) {
       displayNotification("Выберите суп или главное блюдо");
     } else if (
       selectedCategories.includes("drink") &&
-      !selectedCategories.includes("main")
+      !selectedCategories.includes("main_course")
     ) {
       displayNotification("Выберите главное блюдо");
     } else if (!isValidCombo) {

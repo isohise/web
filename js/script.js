@@ -1,6 +1,8 @@
+import { meals, loadDishes } from "./meals.js";
+
 let order = {
   soup: null,
-  main: null,
+  main_course: null,
   drink: null,
   salad: null,
   dessert: null,
@@ -49,7 +51,7 @@ function getCategoryTitle(category) {
   switch (category) {
     case "soup":
       return "Суп";
-    case "main":
+    case "main_course":
       return "Главное блюдо";
     case "drink":
       return "Напиток";
@@ -62,10 +64,13 @@ function getCategoryTitle(category) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+
+  await loadDishes();
+
   const categories = {
     soup: document.getElementById("soup-grid"),
-    main: document.getElementById("main-grid"),
+     main_course: document.getElementById("main_course-grid"),
     salad: document.getElementById("salad-grid"),
     drink: document.getElementById("drink-grid"),
     dessert: document.getElementById("dessert-grid"),
@@ -103,14 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".filters button").forEach((button) => {
     button.addEventListener("click", function () {
       const categorySection = this.closest("section")
-        .querySelector(".meals-grid")
-        .id.split("-")[0];
+      .querySelector(".meals-grid")
+      .id.split("-")[0];
       const kind = this.getAttribute("data-kind");
 
       this.classList.toggle("active");
 
       if (this.classList.contains("active")) {
-
         this.closest(".filters")
           .querySelectorAll("button")
           .forEach((btn) => {
@@ -127,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("form").addEventListener("reset", function () {
     order = {
       soup: null,
-      main: null,
+      main_course: null,
       drink: null,
       salad: null,
       dessert: null,
@@ -136,3 +140,5 @@ document.addEventListener("DOMContentLoaded", function () {
     updateOrderDisplay();
   });
 });
+
+export { order };
